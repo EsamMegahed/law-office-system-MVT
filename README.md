@@ -25,5 +25,6 @@ this system give You a  control to create
 6 - 3 Permissions Level (assistant - lawyer - Super User)
 
 7 - 2 Languages (Arabic - English)
+
 8 - authentication and registration system
 
