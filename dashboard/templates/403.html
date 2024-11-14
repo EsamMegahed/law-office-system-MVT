@@ -1,0 +1,20 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Case File Create' %}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Sorry You Dont Permission Access To This Page' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

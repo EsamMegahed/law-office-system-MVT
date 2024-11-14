@@ -1,0 +1,107 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Category' %}
+{% endblock title %}
+
+{% block cases %}
+active
+{% endblock cases %}
+{% block cases_category %}
+active
+{% endblock cases_category %}
+{% block page_name %}
+{% translate 'Category' %}
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Cases' %}
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Category' %}
+{% endblock page_name_2 %}
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{% translate 'Saved Categories' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>{% translate 'Category' %}</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for category in categories %}
+                                <tr>
+                                    <td>{{ forloop.counter }}.</td>
+                                    <td>{{category.name}}</td>
+                                    
+                                    {% if category.name == "جنائى"%}
+                                    <td></td>
+                                    {% elif category.name == "مدنى" %}
+                                    <td></td>
+                                    {% elif category.name == "اسرة" %}
+                                    <td></td>
+                                    {% elif category.name == "جنح" %}
+                                    <td></td>
+                                    {% elif category.name == "صياغة عقود" %}
+                                    <td></td>
+                                    {% elif category.name == "تراخيص" %}
+                                    <td></td>
+                                    {% elif category.name == "مجلس دولة" %}
+                                    <td></td>
+                                    {% elif category.name == "شركات" %}
+                                    <td></td>
+                                    {% else %}
+                                    <td>
+                                        <a href="{% url 'dashboard:dashboard_case_category_delete' id=category.id %}"><button
+                                                type="button" class="btn btn-block btn-danger btn-sm">{% translate 'Delete' %}</button>
+                                        </a>
+                                    </td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{% translate 'Add Case Category' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method='post' style="text-align: right;direction: rtl;">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            {% bootstrap_form category_form %}
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

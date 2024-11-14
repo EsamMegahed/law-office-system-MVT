@@ -1,0 +1,42 @@
+
+{% extends 'site_base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block title %}
+{% translate 'Case Session' %} : {{session.date|date:'Y / m / d'}}
+{% endblock title %}
+{% block content %}
+
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Update Case Session' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div style="text-align: right;direction: rtl;padding: 20px;">
+        <h2><span style="color: #b99044;">{% translate 'Client Name' %} :</span> {{session.cases.client}}</h2>
+        <br>
+        <h4><span style="color: #b99044;">{% translate 'case name' %} :</span> {{session.cases.case_name}}</h4>
+        <br>
+        
+        <h4><span style="color: #b99044;">{% translate 'case id' %} :</span> {{session.cases.case_id}}</h4>
+
+    </div>
+    <div style="padding-bottom: 20px;text-align: right;direction: rtl;">
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form session_form %}
+            <div style="text-align: center;">
+                <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'Update Session' %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+

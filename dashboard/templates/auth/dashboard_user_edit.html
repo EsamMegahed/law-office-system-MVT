@@ -1,0 +1,46 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{{user.username}} {% translate 'Edit' %}
+{% endblock title %}
+{% block users %}
+active
+{% endblock users %}
+{% block user_List %}
+active
+{% endblock user_List %}
+{% block page_name %}
+{{user.username}} {% translate 'Edit' %}
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Users' %}
+
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Users List' %} / {{user.username}} {% translate 'Edit' %}
+{% endblock page_name_2 %}
+
+{% block content %}
+
+
+<div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">{{user.username|capfirst}} {% translate 'Profile' %}</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form method='post' style="text-align: right;direction: rtl;">
+        {% csrf_token %}
+      <div class="card-body">
+        {% bootstrap_form user_form %}
+      </div>
+      <!-- /.card-body -->
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary ">{% translate 'Update' %}</button>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

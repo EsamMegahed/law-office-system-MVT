@@ -1,0 +1,81 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Sales' %}
+
+{% endblock title %}
+
+{% block sales %}
+active
+{% endblock sales %}
+{% block sales_control %}
+active
+{% endblock sales_control %}
+{% block page_name %}
+{% translate 'Sales Control' %}
+
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Sales' %}
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Sales Control' %}
+
+{% endblock page_name_2 %}
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title" style="float: right;">{% translate 'Client Name' %} :<a href="{% url "cases:client_details" id=case.client.id %}"> {{case.client}}</a></h3>
+                        <br>
+                        <h3 class="card-title" style="float: right;">{% translate 'Case ID' %} : <a href="{% url "cases:case_details" id=case.id %}"> {{case.case_id}}</a></h3>
+
+                        <div class="card-tools" style="float: left;">
+                            <a href="{% url "cases:case_payment_create" id=case.id %}"><button type="button"
+                                class="btn btn-block btn-primary ">{% translate 'View Payment Page' %}</button>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>{% translate 'Money' %}</th>
+                                    <th>{% translate 'Payment Date' %}</th>
+                                    <th>{% translate 'Total Payments' %} : {{sum_cash}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for paymet in paymets %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{paymet.paid}}</td>
+                                    <td>{{paymet.created_at.date|date:'Y / m / d'}}</td>
+                                    <td><a href="{% url "dashboard:dashboard_payment_delete" id=paymet.id %}"><button type="button"
+                                                class="btn btn-block btn-danger ">{% translate 'Delete Payment' %}</button>
+                                        </a></td>     
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

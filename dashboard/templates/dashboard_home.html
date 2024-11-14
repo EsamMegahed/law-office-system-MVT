@@ -1,0 +1,153 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Home' %}
+{% endblock title %}
+
+{% block home %}
+active
+{% endblock home %}
+
+
+{% block page_name %}
+{% translate 'Home' %}
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Home' %}
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+...
+{% endblock page_name_2 %}
+
+
+{% block content %}
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{num_cases}}</h3>
+
+                        <p>{% translate 'Cases' %}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-university "></i>
+                    </div>
+                    <a href="{% url 'dashboard:dashboard_cases' %}" class="small-box-footer">{% translate 'More info' %}<i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{num_clients}}</h3>
+
+                        <p>{% translate 'Clients' %}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="{% url 'dashboard:dashboard_clients' %}" class="small-box-footer">{% translate 'More info' %}<i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>{{num_sessions}}</h3>
+
+                        <p>{% translate 'Case Sessions' %}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-gavel"></i>
+                    </div>
+                    <a href="{% url 'dashboard:dashboard_sessions' %}" class="small-box-footer">{% translate 'More info' %}<i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>{{sum_pay|floatformat:"0"}} L.E</h3>
+
+                        <p>{% translate 'Total Cash Earned' %}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <a href="{% url 'dashboard:dashboard_sales' %}" class="small-box-footer">{% translate 'More info' %}<i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-12 connectedSortable">
+                <div class="card">
+                    <div class="card-header border-transparent">
+                        <h3 class="card-title">{% translate 'Lastest Sessions Created Or Updated' %}</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th>{% translate 'Case ID' %}</th>
+                                        <th>{% translate 'Case Client' %}</th>
+                                        <th>{% translate 'Case Name' %}</th>
+                                        <th>{% translate 'Case Category' %}</th>
+                                        <th>{% translate 'Session Date' %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for session in sessions|slice:":15" %}
+                                    <tr>
+                                        <td><a
+                                                href="{% url 'cases:case_details' id=session.cases.id %}">{{session.cases.case_id}}</a>
+                                        </td>
+                                        <td>{{session.cases.client}}</td>
+                                        <td>{{session.cases.case_name}}</td>
+                                        <td>
+                                            {{session.cases.category}}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'cases:case_sessions_edit' id=session.id %}">
+                                                {{session.date|date:'Y / m / d'}}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+
+                    </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

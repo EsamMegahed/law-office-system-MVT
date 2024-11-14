@@ -1,0 +1,96 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Home' %}
+{% endblock title %}
+{% block content %}
+<div class="slider-area">
+    <div class="single-slider">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 col-xl-6">
+                    <div class="hero-content" style="text-align: right;direction: rtl;">
+                        <div class="title">
+                            {% if request.user.is_authenticated %}
+                            <h1>مرحبا بك فى التطبيق استاذ احمد</h1>
+                            <h2>محامى الدعوات الجنائية</h2>
+                            {% else %}
+                            <h1>المحامى احمد يسرى مجاهد</h1>
+                            <h2>محامى الدعوات الجنائية</h2>
+                            {% endif %}
+                        </div>
+                        <div class="description">
+                            <p>Hi, I am expert lawyer. We solve your problems tempora incidunt ut labore et dolore
+                                magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+                                ullam corporis suscipit laboriosam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xl-6">
+                    <div class="hero-img img-full mt-30 animated fadeInUp" data-wow-duration="1.5s">
+                        <img src="{% static 'site/img/slider/slider-img.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="feature-area pt-80 pb-70">
+    <div class="container">
+        <div class="row  align-items-center" style="text-align: right;
+        direction: rtl;">
+            <div class="col-md-4">
+                <!--Section Title Start-->
+                <div class="section-title feature-section-title">
+                    <h2>لماذا تختارنى لاكون<br> <span>محاميك</span></h2>
+                    <p>لدى خبرة عن كل اغلب انواع القضايا ومنها </p>
+                </div>
+                <!--Section Title End-->
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!--Single Feature Start-->
+                        <div class="single-feature">
+                            <h2>قضايا الاسرة</h2>
+                            <p>Fight for justice is our main goal voluptatum it atque corrupti quos es et quas molestias
+                                pturi sint occaeca tate non </p>
+                        </div>
+                        <!--Single Feature End-->
+                    </div>
+                    <div class="col-md-6">
+                        <!--Single Feature Start-->
+                        <div class="single-feature">
+                            <h2>قضايا الجنح </h2>
+                            <p>Case strategy is the key to success atque rupti quos es et quas molestias cepturi sint
+                                occaeca tate non provident, similique sunt </p>
+                        </div>
+                        <!--Single Feature End-->
+                    </div>
+                    <div class="col-md-6">
+                        <!--Single Feature Start-->
+                        <div class="single-feature">
+                            <h2>Most Experienced</h2>
+                            <p>We have experienced lawyer’s deleniti atque corrupti quos es et quas molestias cepturi
+                                int occaeca tate non provident similique </p>
+                        </div>
+                        <!--Single Feature End-->
+                    </div>
+                    <div class="col-md-6">
+                        <!--Single Feature Start-->
+                        <div class="single-feature">
+                            <h2>Quick Case Solve</h2>
+                            <p>voluptatum deleniti atque corrupti quos es et quas molestias cepturi sint occaeca tate
+                                non provident, similique sunt </p>
+                        </div>
+                        <!--Single Feature End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Slider Area End-->
+{% endblock content %}

@@ -1,0 +1,148 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Client Payment' %}
+{% endblock title %}
+{% block content %}
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Case Payment' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Servcice Layout Area Start-->
+    <div class="service-layout-area pt-100 pb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="main-box clearfix">
+                                    <div class="table-responsive">
+                                        <table class="table user-list">
+                                            <thead style="text-align: left;direction: rtl;">
+                                                <tr>
+
+                                                    <th><span>{% translate 'Case Number' %}</span></th>
+                                                    <th><span>{% translate 'case price' %}</span></th>
+                                                    <th><span>{% translate 'paid' %}</span></th>
+                                                    <th><span>{% translate 'Not paid' %}</span></th>
+                                                    <th><span></span></th>
+
+                                                </tr>
+                                            </thead>
+
+
+
+                                            <tbody style="background-color: #ffffff52; padding-bottom: 10px;">
+                                                {% for case in client.client_cases.all %}
+                                                <tr>
+                                                    <td>
+                                                        <a href="{% url 'cases:case_details' id=case.id %}">
+                                                            <h5>{{case.case_id}}</h5>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <h5>{{case.case_price}}</h5>
+                                                    </td>
+                                                    <td>
+                                                        <h5>{{case.sum_paid_money}}</h5>
+                                                    </td>
+                                                    <td>
+                                                        <h5>{{case.sum_not_paid_money}}</h5>
+                                                    </td>
+
+
+
+                                                    <td style="width: 10%;">
+                                                        <a href="{% url 'cases:case_payment_create' id=case.id %}"
+                                                            class="table-link">
+                                                            <button type="button" class="sent-btn"
+                                                                style="padding-top: 6px;">
+                                                                {% translate 'View' %}</button>
+
+                                                        </a>
+                                                    </td>
+                                                    {% endfor %}
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+                                        {% if clients.has_other_pages %}
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center" style="color: #b99044;">
+                                                {% if clients.has_previous %}
+                                                <li class="page-item">
+                                                    <a class="page-link" href="?page={{clients.previous_page_number}}"
+                                                        style="color: #b99044;">&laquo;</a>
+                                                </li>
+                                                {% endif %}
+                                                {% for i in clients.paginator.page_range %}
+                                                {% if i == clients.number%}
+                                                <li class="page-item active"><a class="page-link" href="?page={{i}}"
+                                                        style="color: #ffffff;background-color: #b99044;border: none;">{{i}}</a>
+                                                </li>
+
+                                                {% else %}
+                                                <li class="page-item "><a class="page-link" href="?page={{i}}"
+                                                        style="color: #b99044;">{{i}}</a>
+                                                </li>
+                                                {% endif %}
+
+
+                                                {% endfor %}
+                                                {% if clients.has_next %}
+                                                <li class="page-item">
+                                                    <a class="page-link" href="?page={{clients.next_page_number}}"
+                                                        style="color: #b99044;">&raquo;</a>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-sidebar-wrapper">
+                        <div class="service-sidebar mb-50">
+                            <div style="text-align: right;padding-top:10px;direction: rtl;">
+                                <h2 style="color: #fff;"><span style="color: #b99044;">
+                                        {% translate 'Name' %} :
+                                    </span>{{client.name}}</h2>
+                            </div>
+                            <div style="text-align: right;padding-top:10px;direction: rtl;">
+                                <h4 style="color: #fff;"><span style="color: #b99044;">{% translate 'Total' %} :
+                                    </span>{{client.sum_cases_payment}}</h4>
+                                <h4 style="color: #fff;"><span style="color: #b99044;">{% translate 'paid' %} :
+                                    </span>{{client.sum_cases_payment_paid}}</h4>
+                                <h4 style="color: #fff;"><span style="color: #b99044;">{% translate 'Not paid' %} :
+                                    </span>{{client.sum_cases_payment_unpiad}}</h4>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Servcice Layout Area End-->
+</div>
+{% endblock content %}

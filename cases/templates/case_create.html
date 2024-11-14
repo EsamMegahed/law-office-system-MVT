@@ -1,0 +1,32 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Case Create' %}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Case Create' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div style="margin: 10px 10px;">
+        <form method="POST">
+            {% csrf_token %}
+            <div style="text-align: right;">
+                {% bootstrap_form case_form %}
+            </div>
+            <div style="text-align: center;">
+                <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'Case Create' %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

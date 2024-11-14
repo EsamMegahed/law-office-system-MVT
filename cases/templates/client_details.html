@@ -1,0 +1,118 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Client Details' %} : {{client_details.name}}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Client Details' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="contact-us-area pt-100">
+    <div class="container">
+
+        <div class="row " style="overflow: hidden;text-align: right;direction: rtl;">
+            <!--Contact Information Start-->
+            <div class="col-md-4 contact-address" style="padding-bottom:20px; ">
+                <div class="contact-information">
+                    <ul>
+                        <div style="color: aliceblue;">
+                            <h1 style="color: #b99044;">{% translate 'Profile' %}</h1>
+                        </div>
+                        <li>
+                            <h5>{% translate 'name' %}</h5>
+                            <p>{{client_details.name}}</p>
+                        </li>
+                        <li>
+                            <h5>{% translate 'phone' %}</h5>
+                            <p>{{client_details.phone}}</p>
+                        </li>
+                        <li>
+                            <h5>{% translate 'whatsapp' %}</h5>
+                            <p>{{client_details.whatsapp}}</p>
+                        </li>
+                        <li>
+                            <h5>{% translate 'adress' %}</h5>
+                            <p>{{client_details.adress}}</p>
+                        </li>
+                        <li>
+                            <div style="width: 100%;text-align: center;">
+                                <a href="{% url 'cases:case_create' id=client_details.id %}"
+                                    style="width: 100%;">
+                                    <button class="sent-btn" type="submit">
+                                        {% translate 'Add Case' %}
+                                        </button></a>
+                            </div>
+                            {% if request.user.is_superuser %}
+                            <div style="width: 100%;padding-top: 30px;text-align: center;">
+                                <a href="{% url 'cases:client_paymen_total' id=client_details.id %}"
+                                    style="width: 100%;">
+                                    <button class="sent-btn" type="submit">
+                                        {% translate 'Client Payment' %}
+                                        </button></a>
+                            </div>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--Contact Information End-->
+            <!--Contact Form Start-->
+            <div class="col-md-8">
+                <div class="contact-form">
+                    <div class="contact-form-title">
+                        <h3>{% translate 'Cases' %}</h3>
+
+                    </div>
+                    {% for case in cases %}
+                    <div class="row" style="max-width: 100%;">
+                        <div class=" col-md-12" style="display: block;">
+                            <div style="width: 100%;text-align:right;direction: rtl;">
+
+                                <div class="">
+                                    <div class="service-sidebar mb-40" style="width: 100%;">
+                                        <h3>{{forloop.counter}} : {{case.case_id}}</h3>
+
+                                        <h4>{{case.category}}</h4>
+                                        <h4>{{case.case_name}}</h4>
+
+                                        <p>{{case.case_description|truncatewords:30}}</p>
+
+                                        <a href="{% url 'cases:case_details' id=case.id %}"
+                                            style="width: 29%;padding-top: 25px;"><button class="sent-btn" type="submit"
+                                                style="padding-bottom: 40px;">
+                                                {% translate 'View Case' %}
+                                                </button></a>
+                                        <h6 style="color: #b99044;">{% translate 'Created From' %} : {{case.created_at|timesince}}
+                                        </h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!--Contact Form End-->
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

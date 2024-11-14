@@ -1,0 +1,40 @@
+{% extends "site_base.html" %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}{% translate 'LOGIN' %}{% endblock title %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12 center">
+      <div
+        style="width: 100%;border: 5px;border-style: solid;border-color:#b99044;padding: 20px;border-radius: 30px;margin: 15px;">
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+          please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+        {% endif %}
+
+        <form method="post" action="{% url 'login' %}" style="text-align: right;direction: rtl;">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <div style="text-align: center;">
+            <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'LOGIN' %}</button>
+          </div>
+
+          <input type="hidden" name="next" value="{{ next }}">
+        </form>
+
+        {# Assumes you set up the password_reset view in your URLconf #}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

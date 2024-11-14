@@ -1,0 +1,109 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Events List' %}
+
+{% endblock title %}
+{% block content %}
+
+
+<div class="container">
+    <div style="margin: 10px 10px;">
+        <form method="POST">
+            {% csrf_token %}
+            <div style="text-align: right;">
+                {% bootstrap_form date_form %}
+            </div>
+
+            <div style="text-align: center;">
+                <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'Show Events' %}</button>
+            </div>
+        </form>
+    </div>
+    {% if events %}
+    <div style="text-align: center;padding-top: 30px;">
+        <a href="{% url 'cases:event_pdf' %}?events_id={{events_id}}">
+            <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'Print Event' %}</button>
+        </a>
+    </div>
+    {% endif %}
+    <div class="row" style="text-align: center;padding-top: 40px;color: #b99044;">
+        <div class="col-12">
+            {% if events %}
+            {% if events.first.start_date.date == today %}
+            <h2>{% translate 'Events Of Today' %}</h2>
+            {% else %}
+            <h2>{% translate 'Events' %}</h2>
+            <br>
+            <h3>{{events.first.start_date.date|date:"Y / m / d"}}</h3>
+            {% endif %}
+            {% else %}
+            <h2>{% translate 'No Events In This Day' %}</h2>
+            {% endif %}
+            
+
+        </div>
+    </div>
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-12" style="text-align: right;direction: rtl;">
+            {% for event in events %}
+            <div
+                style="width: 100%; margin: 15px;padding: 10px; border: 3px;border-color: #b99044;border-style: solid;border-radius: 10px;;">
+                <div class="row">
+
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col-4" style="width: 100%;border-left: 2px solid #b99044;">
+                                <div class="center" style="direction: ltr;">
+                                    <div style="text-align: center;">
+                                        <button class="sent-btn" style="width: 100%;" type="button">
+                                         
+                                            {{event.start_date|date:'Y / m / d'}}</button>
+                                    </div>
+                                    <div style="text-align: center;padding-top: 20px;">
+                                        
+                                        <button class="sent-btn" style="width: 100%;" type="button">
+                                            {% translate 'Start'%} :
+                                            {{event.start_date|time}}</button>
+                                    </div>
+                                    <div style="text-align: center;padding-top: 20px;">
+                                        <button class="sent-btn" style="width: 100%;" type="button">
+                                            {% translate 'End'%} :
+                                            {{event.End_date|time}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4" style="width: 100%;text-align: center;border-left: 2px solid #b99044;">
+                                <h5 style="color: #b99044;">{% translate "task" %}</h5>
+                                <p>{{event.task|linebreaks}}</p>
+                            </div>
+                            <div class="col-4" style="width: 100%;text-align: center;border-left: 2px solid #b99044;">
+                                <h5 style="color: #b99044;">{% translate "location" %}</h5>
+                                <p>{{event.location}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+
+                        <h5><span style="color: #b99044;">{% translate 'Client Name'%} : </span>{{event.cases.client}}
+                        </h5>
+                        <h6><span style="color: #b99044;">{% translate 'Category'%} : </span>{{event.cases.category}}
+                        </h6>
+                        <h6><span style="color: #b99044;">{% translate 'case id'%} : </span>{{event.cases.case_id}}</h6>
+                        <h6><span style="color: #b99044;">{% translate 'case name'%} : </span>{{event.cases.case_name}}
+                        </h6>
+                        <h6><span style="color: #b99044;">{% translate 'case number'%} :
+                            </span>{{event.cases.case_number}}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock content %}

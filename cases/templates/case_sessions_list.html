@@ -1,0 +1,74 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Sessions' %} : {{sessions_for_next_month|length}}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Sessions For Next month' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="text-align: right;direction: rtl;">
+        <div class="col-6" style="padding: 20px;">
+            <h2 style="color: #b99044;">{% translate 'Sessions For Next month Count' %} :
+                {{sessions_for_next_month|length}}</h2>
+        </div>
+        <div class="col-6" style="padding: 20px;">
+            <h3 style="color: #b99044;">{% translate 'From Today'%} : {{today|date:"Y / m / d"}}</h2>
+                <h3 style="color: #b99044;">{% translate 'To'%} : {{date_to_next_month|date:"Y / m / d"}}</h2>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 20px;text-align: right;direction: rtl;">
+        <div class="col-12">
+            {% for session in sessions_for_next_month|dictsort:'date' %}
+            <div
+                style="width: 100%; margin: 15px;padding: 10px; border: 3px;border-color: #b99044;border-style: solid;border-radius: 10px;;">
+                <div class="row">
+                    <div class="col-6">
+
+                        <h5><span style="color: #b99044;">{% translate 'Client Name'%} : </span>{{session.cases.client}}
+                        </h5>
+                        <h6><span style="color: #b99044;">{% translate 'Category'%} : </span>{{session.cases.category}}
+                        </h6>
+                        <h6><span style="color: #b99044;">{% translate 'case id'%} : </span>{{session.cases.case_id}}
+                        </h6>
+                        <h6><span style="color: #b99044;">{% translate 'case name'%} :
+                            </span>{{session.cases.case_name}}
+                        </h6>
+                        <h6><span style="color: #b99044;">{% translate 'case number'%} :
+                            </span>{{session.cases.case_number}}</h6>
+                    </div>
+                    <div class="col-6">
+                        <div style="max-width: 100%; text-align: right; padding: 10px;">
+                            <a href="{% url 'cases:case_sessions_edit' id=session.id %}">
+                                <button class="sent-btn" style="width: 100%;" type="submit">
+                                    {{session.date|date:"Y / m / d"}}
+                                </button>
+                            </a>
+                        </div>
+                        <div style="max-width: 100%; text-align: right; padding: 10px;">
+                            <a href="{% url 'cases:case_details' id=session.cases.id %}">
+                                <button class="sent-btn" style="width: 100%;" type="submit">
+                                    {% translate 'Move To Case Profile'%}
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

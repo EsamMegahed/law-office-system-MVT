@@ -1,0 +1,76 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Case Payment' %}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Case Payment' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-top: 20px;">
+    <div style="text-align: right;direction: rtl;">
+        <h2><span style="color: #b99044;">{% translate 'Client Name' %} :</span> {{cases.client}}</h2>
+        <br>
+        <h4><span style="color: #b99044;">{% translate 'case name' %} :</span> {{cases.case_name}}</h4>
+        <br>
+        <h4><span style="color: #b99044;">{% translate 'case price' %} :</span> {{cases.case_price}}</h4>
+        <br>
+        <h4><span style="color: #b99044;">{% translate 'case id' %} :</span> {{cases.case_id}}</h4>
+
+    </div>
+    <div style="padding-top: 20px;padding-bottom: 20px;text-align: right;direction: rtl;">
+        <form method="POST">
+            {% csrf_token %}
+
+            {% bootstrap_form payment_form %}
+            <div style="text-align: center;">
+                <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'Submit Payment' %} </button>
+            </div>
+        </form>
+    </div>
+
+    <div style="text-align: center;">
+        <div class="row">
+            <div class="col-6">
+                <h4><span style="color: #b99044;">{% translate 'Sum Old Payments' %} </span>: {{old_payments_sum}}</h4>
+            </div>
+            <div class="col-6">
+                <h4><span style="color: #b99044;">{% translate 'Not paid' %} </span>: {{not_paid}}</h4>
+            </div>
+            <br>
+        </div>
+
+        <h3 style="color: #b99044;">{% translate 'Old Payments' %}</h3>
+
+        <div>
+            <div class="row">
+                {% for payment in old_payments %}
+                <div class="col-12"
+                    style="width: 70%;height: 50px; background-color: #b99044; color: aliceblue;text-align: center; margin: 20px;direction: rtl;">
+                    <div style="padding-top: 15px;display: inline;">
+                        <span><i class="fa fa-money">
+                            </i></span>
+                        <h6><span style="color: black;">{{payment.paid}}</span>  {% translate 'Paid In' %} : {{payment.created_at|date:"Y / m / d"}}
+                            {{payment.created_at|time}}
+                        </h6>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock content %}

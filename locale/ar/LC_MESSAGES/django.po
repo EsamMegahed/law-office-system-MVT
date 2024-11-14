@@ -1,0 +1,904 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-28 08:53+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\authentication\forms.py:19
+msgid "New Password"
+msgstr "كلمة المرور الجديدة"
+
+#: .\authentication\forms.py:20
+msgid "Confirm Password"
+msgstr "تاكيد كلمة المرور"
+
+#: .\authentication\templates\registration\login.html:5
+#: .\authentication\templates\registration\login.html:29
+msgid "LOGIN"
+msgstr "تسجيل الدخول"
+
+#: .\cases\forms.py:51 .\cases\models.py:55
+msgid "file"
+msgstr "الملف"
+
+#: .\cases\forms.py:81
+msgid "Date of Sessions"
+msgstr "تاريخ الجلسة"
+
+#: .\cases\forms.py:108
+msgid "Event Day"
+msgstr "تاريخ المهمة"
+
+#: .\cases\forms.py:124
+msgid "Start Time"
+msgstr "وقت البدء"
+
+#: .\cases\forms.py:131
+msgid "ُEnd Time"
+msgstr "وقت الانتهاء"
+
+#: .\cases\models.py:14 .\cases\models.py:48
+#: .\cases\templates\client_details.html:35
+#: .\cases\templates\clients_view.html:34
+msgid "name"
+msgstr "الاسم"
+
+#: .\cases\models.py:15 .\cases\templates\client_details.html:39
+msgid "phone"
+msgstr "الهاتف"
+
+#: .\cases\models.py:16 .\cases\templates\client_details.html:43
+msgid "whatsapp"
+msgstr "الواتس اب"
+
+#: .\cases\models.py:17 .\cases\templates\client_details.html:47
+msgid "adress"
+msgstr "العنوان"
+
+#: .\cases\models.py:59
+msgid "Case Files"
+msgstr "ملفات القضية"
+
+#: .\cases\models.py:71
+msgid "date"
+msgstr "التاريخ"
+
+#: .\cases\models.py:72
+msgid "session description"
+msgstr "قرار الجلسة"
+
+#: .\cases\models.py:73
+msgid "active"
+msgstr "مفعل"
+
+#: .\cases\models.py:75 .\dashboard\templates\dashboard_home.html:67
+msgid "Case Sessions"
+msgstr "جلسات القضايا"
+
+#: .\cases\models.py:83 .\cases\templates\case_details.html:46
+#: .\cases\templates\case_payment_create.html:6
+#: .\cases\templates\case_payment_create.html:14
+#: .\cases\templates\client_paymen_total.html:13
+msgid "Case Payment"
+msgstr "معاملات الدفع للقضية"
+
+#: .\cases\models.py:85 .\cases\templates\client_paymen_total.html:36
+#: .\cases\templates\client_paymen_total.html:131
+msgid "paid"
+msgstr "دفع"
+
+#: .\cases\models.py:100
+msgid "Client"
+msgstr "الموكل"
+
+#: .\cases\models.py:104 .\cases\templates\case_details.html:140
+#: .\cases\templates\case_event_create.html:82
+#: .\cases\templates\case_event_view.html:93
+#: .\cases\templates\case_file_update.html:27
+#: .\cases\templates\case_sessions_list.html:40
+#: .\dashboard\templates\dashboard_case_category.html:6
+#: .\dashboard\templates\dashboard_case_category.html:16
+#: .\dashboard\templates\dashboard_case_category.html:22
+#: .\dashboard\templates\dashboard_case_category.html:41
+msgid "Category"
+msgstr "مصنف القضية"
+
+#: .\cases\models.py:109 .\cases\templates\case_details.html:146
+#: .\cases\templates\case_event_create.html:84
+#: .\cases\templates\case_event_view.html:96
+#: .\cases\templates\case_file_update.html:29
+#: .\cases\templates\case_payment_create.html:23
+#: .\cases\templates\case_sessions_create.html:25
+#: .\cases\templates\case_sessions_list.html:44
+#: .\cases\templates\case_sessions_update.html:25
+msgid "case name"
+msgstr "اسم القضية"
+
+#: .\cases\models.py:110 .\cases\templates\case_details.html:166
+msgid "case description"
+msgstr "وصف القضية"
+
+#: .\cases\models.py:111 .\cases\templates\case_details.html:149
+#: .\cases\templates\case_event_create.html:85
+#: .\cases\templates\case_event_view.html:98
+#: .\cases\templates\case_file_update.html:30
+#: .\cases\templates\case_sessions_list.html:47
+msgid "case number"
+msgstr "رقم القضية المسجل بالمحكمة"
+
+#: .\cases\models.py:112 .\cases\templates\case_details.html:180
+msgid "case plan"
+msgstr "خطة القضية"
+
+#: .\cases\models.py:113 .\cases\templates\case_details.html:193
+msgid "Case loopholes"
+msgstr "ثغرات القضية"
+
+#: .\cases\models.py:114 .\cases\templates\case_payment_create.html:25
+#: .\cases\templates\case_sessions_create.html:27
+#: .\cases\templates\client_paymen_total.html:35
+msgid "case price"
+msgstr "سعر القضية"
+
+#: .\cases\models.py:119 .\cases\templates\case_details.html:143
+#: .\cases\templates\case_event_create.html:83
+#: .\cases\templates\case_event_view.html:95
+#: .\cases\templates\case_file_update.html:28
+#: .\cases\templates\case_payment_create.html:27
+#: .\cases\templates\case_sessions_create.html:29
+#: .\cases\templates\case_sessions_list.html:42
+#: .\cases\templates\case_sessions_update.html:28
+msgid "case id"
+msgstr "سريال القضية"
+
+#: .\cases\models.py:141
+msgid "Case Events"
+msgstr "مهام القضية"
+
+#: .\cases\models.py:147 .\cases\templates\case_event_create.html:72
+#: .\cases\templates\case_event_view.html:83
+msgid "location"
+msgstr "الموقع"
+
+#: .\cases\models.py:148 .\cases\templates\case_event_create.html:68
+#: .\cases\templates\case_event_view.html:79
+msgid "task"
+msgstr "المهمة"
+
+#: .\cases\models.py:149
+#, fuzzy
+#| msgid "start date"
+msgid "start_date"
+msgstr "وقت البدء"
+
+#: .\cases\models.py:150
+#, fuzzy
+#| msgid "End date"
+msgid "End_date"
+msgstr "وقت الانتهاء"
+
+#: .\cases\templates\case_create.html:6 .\cases\templates\case_create.html:14
+#: .\cases\templates\case_create.html:27
+msgid "Case Create"
+msgstr "انشاء قضية"
+
+#: .\cases\templates\case_details.html:6
+#: .\cases\templates\case_details.html:14
+msgid "Case Details"
+msgstr "تفاصيل القضية"
+
+#: .\cases\templates\case_details.html:34
+msgid "Add Event"
+msgstr "اضافة مهمة"
+
+#: .\cases\templates\case_details.html:60
+msgid "Add Session"
+msgstr "اضف جلسة"
+
+#: .\cases\templates\case_details.html:64
+#: .\cases\templates\case_sessions_list.html:6
+#: .\cases\templates\site_base.html:111 .\cases\templates\site_base.html:133
+#: .\cases\templates\site_base.html:155
+#: .\dashboard\templates\dashboard_base.html:143
+#: .\dashboard\templates\dashboard_cases_charts.html:181
+#: .\dashboard\templates\dashboard_sessions.html:24
+#: .\dashboard\templates\dashboard_sessions_view.html:23
+msgid "Sessions"
+msgstr "الجلسات"
+
+#: .\cases\templates\case_details.html:99
+msgid "Add Files"
+msgstr "اضف ملفات"
+
+#: .\cases\templates\case_details.html:103
+#: .\dashboard\templates\dashboard_base.html:149
+#: .\dashboard\templates\dashboard_files.html:25
+#: .\dashboard\templates\dashboard_files_view.html:25
+#: .\dashboard\templates\dashboard_files_view.html:56
+msgid "Files"
+msgstr "ملفات القضية"
+
+#: .\cases\templates\case_details.html:133
+msgid "Case Information"
+msgstr "معلومات القضية"
+
+#: .\cases\templates\case_details.html:137
+#: .\cases\templates\case_event_create.html:80
+#: .\cases\templates\case_event_view.html:91
+#: .\cases\templates\case_file_update.html:25
+#: .\cases\templates\case_payment_create.html:21
+#: .\cases\templates\case_sessions_create.html:23
+#: .\cases\templates\case_sessions_list.html:38
+#: .\cases\templates\case_sessions_update.html:23
+#: .\dashboard\templates\dashboard_files_view.html:39
+#: .\dashboard\templates\dashboard_sales_view.html:37
+#: .\dashboard\templates\dashboard_sessions_view.html:36
+msgid "Client Name"
+msgstr "اسم الموكل"
+
+#: .\cases\templates\case_details.html:157
+msgid "Case Text Field"
+msgstr "مدخلات القضية"
+
+#: .\cases\templates\case_details.html:162
+#: .\dashboard\templates\auth\dashboard_user_edit.html:6
+#: .\dashboard\templates\auth\dashboard_user_edit.html:15
+#: .\dashboard\templates\auth\dashboard_user_edit.html:22
+#: .\dashboard\templates\dashboard_cases.html:122
+#: .\dashboard\templates\dashboard_clients.html:123
+msgid "Edit"
+msgstr "تعديل"
+
+#: .\cases\templates\case_edit.html:6 .\cases\templates\case_edit.html:15
+msgid "Case Edit"
+msgstr "تعديل القضية"
+
+#: .\cases\templates\case_edit.html:27 .\cases\templates\edit_client.html:26
+msgid "Save Changes"
+msgstr "حفظ التغيرات"
+
+#: .\cases\templates\case_event_create.html:6
+msgid "Case Event"
+msgstr "مهام القضية"
+
+#: .\cases\templates\case_event_create.html:14
+#: .\cases\templates\case_event_create.html:28
+msgid "Create Event"
+msgstr "انشاء مهمة"
+
+#: .\cases\templates\case_event_create.html:36
+msgid "Old Events For This Case"
+msgstr "المهمات القديمة الخاصة بهذه القضية"
+
+#: .\cases\templates\case_event_create.html:57
+#: .\cases\templates\case_event_view.html:68
+msgid "Start"
+msgstr "بدء"
+
+#: .\cases\templates\case_event_create.html:62
+#: .\cases\templates\case_event_view.html:73
+msgid "End"
+msgstr "انتهاء"
+
+#: .\cases\templates\case_event_create.html:94
+msgid "Delete Event"
+msgstr "مسح المهمة"
+
+#: .\cases\templates\case_event_view.html:6
+msgid "Events List"
+msgstr "قائمة المهمات"
+
+#: .\cases\templates\case_event_view.html:21
+msgid "Show Events"
+msgstr "عرض المهمات"
+
+#: .\cases\templates\case_event_view.html:28
+#, fuzzy
+#| msgid "Create Event"
+msgid "Print Event"
+msgstr "انشاء مهمة"
+
+#: .\cases\templates\case_event_view.html:36
+msgid "Events Of Today"
+msgstr "مهمات اليوم"
+
+#: .\cases\templates\case_event_view.html:38
+msgid "Events"
+msgstr "مهمات"
+
+#: .\cases\templates\case_event_view.html:43
+
+msgid "No Events In This Day"
+msgstr "لا يوجد مهمات خاصة بهاذا اليوم"
+
+#: .\cases\templates\case_file_create.html:6
+#: .\cases\templates\case_file_create.html:14 .\dashboard\templates\403.html:6
+msgid "Case File Create"
+msgstr "اضافة ملفات القضية"
+
+#: .\cases\templates\case_file_create.html:25
+msgid "Save Files"
+msgstr "حفظ الملفات"
+
+#: .\cases\templates\case_file_update.html:6
+#: .\cases\templates\case_file_update.html:15
+msgid "Case File"
+msgstr "ملف القضية"
+
+#: .\cases\templates\case_file_update.html:42
+#, fuzzy
+#| msgid "Files"
+msgid "File"
+msgstr "ملفات القضية"
+
+#: .\cases\templates\case_payment_create.html:36
+msgid "Submit Payment"
+msgstr "ادخال دفع للقضية"
+
+#: .\cases\templates\case_payment_create.html:44
+msgid "Sum Old Payments"
+msgstr "مجموع ما تم دفعه"
+
+#: .\cases\templates\case_payment_create.html:47
+#: .\cases\templates\client_paymen_total.html:37
+#: .\cases\templates\client_paymen_total.html:133
+msgid "Not paid"
+msgstr "لم يدفع"
+
+#: .\cases\templates\case_payment_create.html:52
+msgid "Old Payments"
+msgstr "المدفوعات القديمة"
+
+#: .\cases\templates\case_payment_create.html:62
+msgid "Paid In"
+msgstr "تم الدفع فى تاريخ"
+
+#: .\cases\templates\case_sessions_create.html:6
+#: .\cases\templates\case_sessions_create.html:15
+msgid "Case Sessions Create"
+msgstr "انشاء جلسات القضية"
+
+#: .\cases\templates\case_sessions_create.html:37
+msgid "Create Session"
+msgstr "انشاء جلسة"
+
+#: .\cases\templates\case_sessions_list.html:14
+msgid "Sessions For Next month"
+msgstr "جلسات الشهر القادم"
+
+#: .\cases\templates\case_sessions_list.html:22
+msgid "Sessions For Next month Count"
+msgstr "عدد جلسات الشهر القادم"
+
+#: .\cases\templates\case_sessions_list.html:26
+msgid "From Today"
+msgstr "بدا من اليوم"
+
+#: .\cases\templates\case_sessions_list.html:27
+msgid "To"
+msgstr "حتى"
+
+#: .\cases\templates\case_sessions_list.html:61
+msgid "Move To Case Profile"
+msgstr "الانتقال الى ملف القضية"
+
+#: .\cases\templates\case_sessions_update.html:7
+msgid "Case Session"
+msgstr "جلسة بتاريخ"
+
+#: .\cases\templates\case_sessions_update.html:16
+msgid "Update Case Session"
+msgstr "تعديل جلسات القضية"
+
+#: .\cases\templates\case_sessions_update.html:36
+msgid "Update Session"
+msgstr "تعديل الجلسة"
+
+#: .\cases\templates\case_text_field_edit.html:6
+#: .\cases\templates\case_text_field_edit.html:14
+msgid "Case Text Fields Edit"
+msgstr "تعديل مدخلات القضية"
+
+#: .\cases\templates\case_text_field_edit.html:27
+msgid "Save Text"
+msgstr "حفظ النص"
+
+#: .\cases\templates\client_details.html:6
+#: .\cases\templates\client_details.html:14
+msgid "Client Details"
+msgstr "معلومات الموكل"
+
+#: .\cases\templates\client_details.html:32
+#: .\dashboard\templates\auth\dashboard_user_details.html:30
+#: .\dashboard\templates\auth\dashboard_user_edit.html:30
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:29
+msgid "Profile"
+msgstr "الملف الشخضى"
+
+#: .\cases\templates\client_details.html:55
+msgid "Add Case"
+msgstr "اضافة قضية"
+
+#: .\cases\templates\client_details.html:63
+#: .\cases\templates\client_paymen_total.html:6
+msgid "Client Payment"
+msgstr "حسابات الموكل"
+
+#: .\cases\templates\client_details.html:77
+#: .\dashboard\templates\dashboard_base.html:117
+#: .\dashboard\templates\dashboard_base.html:137
+#: .\dashboard\templates\dashboard_case_category.html:19
+#: .\dashboard\templates\dashboard_cases.html:6
+#: .\dashboard\templates\dashboard_cases.html:21
+#: .\dashboard\templates\dashboard_cases.html:24
+#: .\dashboard\templates\dashboard_cases.html:42
+#: .\dashboard\templates\dashboard_cases.html:79
+#: .\dashboard\templates\dashboard_cases_charts.html:21
+#: .\dashboard\templates\dashboard_cases_charts.html:192
+#: .\dashboard\templates\dashboard_clients.html:20
+#: .\dashboard\templates\dashboard_files.html:21
+#: .\dashboard\templates\dashboard_files.html:43
+#: .\dashboard\templates\dashboard_files.html:67
+#: .\dashboard\templates\dashboard_files_view.html:21
+#: .\dashboard\templates\dashboard_home.html:37
+#: .\dashboard\templates\dashboard_sales.html:44
+#: .\dashboard\templates\dashboard_sales.html:68
+#: .\dashboard\templates\dashboard_sessions.html:20
+#: .\dashboard\templates\dashboard_sessions.html:43
+#: .\dashboard\templates\dashboard_sessions.html:67
+#: .\dashboard\templates\dashboard_sessions_view.html:20
+msgid "Cases"
+msgstr "القضايا"
+
+#: .\cases\templates\client_details.html:97
+msgid "View Case"
+msgstr "استعراض القضية"
+
+#: .\cases\templates\client_details.html:99
+msgid "Created From"
+msgstr "انشات منذ"
+
+#: .\cases\templates\client_paymen_total.html:34
+#: .\dashboard\templates\dashboard_cases.html:105
+#: .\dashboard\templates\dashboard_files.html:93
+#: .\dashboard\templates\dashboard_sales.html:94
+#: .\dashboard\templates\dashboard_sessions.html:93
+msgid "Case Number"
+msgstr "سريال القضية"
+
+#: .\cases\templates\client_paymen_total.html:70
+#: .\cases\templates\clients_view.html:35
+#: .\cases\templates\clients_view.html:58
+#: .\dashboard\templates\auth\dashboard_user_list.html:93
+msgid "View"
+msgstr "عرض"
+
+#: .\cases\templates\client_paymen_total.html:125
+#: .\dashboard\templates\dashboard_clients.html:108
+msgid "Name"
+msgstr "الاسم"
+
+#: .\cases\templates\client_paymen_total.html:129
+msgid "Total"
+msgstr "المجموع"
+
+#: .\cases\templates\clients_view.html:6
+#: .\cases\templates\clients_view.html:14
+msgid "View Clients"
+msgstr "استعراض الموكلين"
+
+#: .\cases\templates\clients_view.html:113
+msgid "Create New Client"
+msgstr "انشاء موكل جديد"
+
+#: .\cases\templates\clients_view.html:122
+msgid "Search For Client"
+msgstr "بحث عن موكل"
+
+#: .\cases\templates\create_client.html:6
+#: .\cases\templates\create_client.html:13
+#: .\cases\templates\create_client.html:28
+msgid "Client Create"
+msgstr "انشاء موكل"
+
+#: .\cases\templates\edit_client.html:6 .\cases\templates\edit_client.html:14
+msgid "Clients Edit"
+msgstr "تعديل الموكلين"
+
+#: .\cases\templates\home_page.html:6 .\cases\templates\site_base.html:108
+#: .\cases\templates\site_base.html:130 .\cases\templates\site_base.html:153
+#: .\dashboard\templates\dashboard_base.html:44
+#: .\dashboard\templates\dashboard_base.html:85
+#: .\dashboard\templates\dashboard_home.html:6
+#: .\dashboard\templates\dashboard_home.html:15
+#: .\dashboard\templates\dashboard_home.html:18
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\cases\templates\site_base.html:110 .\cases\templates\site_base.html:132
+#: .\dashboard\templates\dashboard_base.html:131
+#: .\dashboard\templates\dashboard_clients.html:7
+#: .\dashboard\templates\dashboard_clients.html:17
+#: .\dashboard\templates\dashboard_clients.html:24
+#: .\dashboard\templates\dashboard_clients.html:42
+#: .\dashboard\templates\dashboard_clients.html:83
+#: .\dashboard\templates\dashboard_home.html:52
+msgid "Clients"
+msgstr "الموكلين"
+
+#: .\cases\templates\site_base.html:112 .\cases\templates\site_base.html:134
+#: .\cases\templates\site_base.html:156
+msgid "ToDo List"
+msgstr "قائمة المهام"
+
+#: .\cases\templates\site_base.html:113
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#: .\cases\templates\site_base.html:120 .\cases\templates\site_base.html:141
+#: .\cases\templates\site_base.html:163
+msgid "LogOut"
+msgstr "تسجيل خروج"
+
+#: .\cases\templates\site_base.html:177
+msgid "LogIn"
+msgstr "تسجيل دخول"
+
+#: .\cases\templates\site_base.html:236
+msgid "Contact Info"
+msgstr "معلومات التواصل"
+
+#: .\dashboard\forms.py:7
+msgid "Category Name"
+msgstr "اسم مصنف القضية"
+
+#: .\dashboard\templates\403.html:14
+msgid "Sorry You Dont Permission Access To This Page"
+msgstr "عذرا انت لا تملك صلاحية الوصول الى هذه المعلومات"
+
+#: .\dashboard\templates\auth\dashboard_user_create.html:6
+#: .\dashboard\templates\auth\dashboard_user_create.html:21
+#: .\dashboard\templates\auth\dashboard_user_details.html:18
+#: .\dashboard\templates\auth\dashboard_user_edit.html:18
+#: .\dashboard\templates\auth\dashboard_user_list.html:20
+#: .\dashboard\templates\auth\dashboard_user_list.html:33
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:18
+#: .\dashboard\templates\dashboard_base.html:94
+msgid "Users"
+msgstr "المستخدمون"
+
+#: .\dashboard\templates\auth\dashboard_user_create.html:18
+#: .\dashboard\templates\auth\dashboard_user_create.html:25
+#: .\dashboard\templates\auth\dashboard_user_create.html:32
+#: .\dashboard\templates\dashboard_base.html:102
+msgid "Create User"
+msgstr "انشاء مستخدم"
+
+#: .\dashboard\templates\auth\dashboard_user_create.html:41
+msgid "Create"
+msgstr "انشاء"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:6
+#: .\dashboard\templates\auth\dashboard_user_details.html:15
+#: .\dashboard\templates\auth\dashboard_user_details.html:22
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:15
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:21
+msgid "Details"
+msgstr "تفاصيل"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:22
+#: .\dashboard\templates\auth\dashboard_user_edit.html:22
+#: .\dashboard\templates\auth\dashboard_user_list.html:6
+#: .\dashboard\templates\auth\dashboard_user_list.html:17
+#: .\dashboard\templates\auth\dashboard_user_list.html:23
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:21
+#: .\dashboard\templates\dashboard_base.html:108
+msgid "Users List"
+msgstr "قائمة المستخدمون"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:37
+#: .\dashboard\templates\auth\dashboard_user_list.html:53
+msgid "User Name"
+msgstr "اسم المستخدم"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:41
+msgid "Email"
+msgstr "البريد الالكترونى"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:51
+#: .\dashboard\templates\auth\dashboard_user_details.html:65
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:6
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:58
+msgid "Change Password"
+msgstr "تغيير كلمة المرور"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:60
+msgid "Edit Profile"
+msgstr "تعديل الملف"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:70
+#: .\dashboard\templates\dashboard_case_category.html:70
+#: .\dashboard\templates\dashboard_cases.html:125
+#: .\dashboard\templates\dashboard_clients.html:127
+msgid "Delete"
+msgstr "مسح"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:83
+msgid "Remove Lawyer Permission"
+msgstr "حذف صلاحية المحامى"
+
+#: .\dashboard\templates\auth\dashboard_user_details.html:90
+msgid "Make Him A Lawyer"
+msgstr "اعطاء المستخدم صلاحية المحامى"
+
+#: .\dashboard\templates\auth\dashboard_user_edit.html:42
+msgid "Update"
+msgstr "تحديث"
+
+#: .\dashboard\templates\auth\dashboard_user_list.html:56
+msgid "User Email"
+msgstr "البريد الالكترونى الخاص بالمستخدم"
+
+#: .\dashboard\templates\auth\dashboard_user_list.html:59
+msgid "Last time Loged In"
+msgstr "اخر تسجيل دخول"
+
+#: .\dashboard\templates\auth\dashboard_user_list.html:84
+msgid "From"
+msgstr "منذ"
+
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:42
+msgid "Alert"
+msgstr "انتبه"
+
+#: .\dashboard\templates\auth\dashboard_user_password_change.html:43
+msgid "Your Password Not Matching"
+msgstr "كلمة السر غير متطابقة"
+
+#: .\dashboard\templates\dashboard_base.html:125
+msgid "Case Categories"
+msgstr "مصنفات القضايا"
+
+#: .\dashboard\templates\dashboard_base.html:155
+#: .\dashboard\templates\dashboard_base.html:179
+#: .\dashboard\templates\dashboard_cases_charts.html:25
+#: .\dashboard\templates\dashboard_sales_charts.html:25
+msgid "Charts"
+msgstr "الرسوم البيانية"
+
+#: .\dashboard\templates\dashboard_base.html:164
+#: .\dashboard\templates\dashboard_sales.html:6
+#: .\dashboard\templates\dashboard_sales.html:21
+#: .\dashboard\templates\dashboard_sales_charts.html:21
+#: .\dashboard\templates\dashboard_sales_view.html:6
+#: .\dashboard\templates\dashboard_sales_view.html:21
+msgid "Sales"
+msgstr "المبيعات"
+
+#: .\dashboard\templates\dashboard_base.html:172
+#: .\dashboard\templates\dashboard_sales.html:17
+#: .\dashboard\templates\dashboard_sales.html:25
+#: .\dashboard\templates\dashboard_sales_view.html:17
+#: .\dashboard\templates\dashboard_sales_view.html:24
+msgid "Sales Control"
+msgstr "التحكم فى المبيعات"
+
+#: .\dashboard\templates\dashboard_case_category.html:33
+msgid "Saved Categories"
+msgstr "مصنفات القضايا المحفوظة"
+
+#: .\dashboard\templates\dashboard_case_category.html:87
+msgid "Add Case Category"
+msgstr "اضف مصنف قضية"
+
+#: .\dashboard\templates\dashboard_case_category.html:98
+msgid "Submit"
+msgstr "ادخال"
+
+#: .\dashboard\templates\dashboard_cases.html:17
+msgid "Cases Control"
+msgstr "التحكم فى القضايا"
+
+#: .\dashboard\templates\dashboard_cases.html:34
+#: .\dashboard\templates\dashboard_files.html:35
+#: .\dashboard\templates\dashboard_sales.html:36
+#: .\dashboard\templates\dashboard_sessions.html:35
+msgid "Cases Search By Case Number"
+msgstr "البحث فى القضايا عن طريق سريال القضية"
+
+#: .\dashboard\templates\dashboard_cases.html:43
+#: .\dashboard\templates\dashboard_files.html:44
+#: .\dashboard\templates\dashboard_sales.html:45
+#: .\dashboard\templates\dashboard_sessions.html:44
+msgid "Enter Case Number"
+msgstr "ادخل سريال القضية"
+
+#: .\dashboard\templates\dashboard_cases.html:49
+#: .\dashboard\templates\dashboard_clients.html:50
+#: .\dashboard\templates\dashboard_files.html:50
+#: .\dashboard\templates\dashboard_sales.html:51
+#: .\dashboard\templates\dashboard_sessions.html:50
+msgid "Search"
+msgstr "بحث"
+
+#: .\dashboard\templates\dashboard_cases.html:65
+msgid "Alert : Deleting Case"
+msgstr "تحذير : مسح القضية"
+
+#: .\dashboard\templates\dashboard_cases.html:68
+msgid ""
+"Be CareFul Deleting Case Will Deleting His Files ,Sessions That connected "
+"With This Client"
+msgstr "انتبه مسح القضية سيؤدى الى مسح متعلقاتها من مهام وملفات وجلسات واموال"
+
+#: .\dashboard\templates\dashboard_cases.html:103
+#: .\dashboard\templates\dashboard_files.html:91
+#: .\dashboard\templates\dashboard_home.html:117
+#: .\dashboard\templates\dashboard_sales.html:92
+#: .\dashboard\templates\dashboard_sessions.html:91
+msgid "Case Client"
+msgstr "العميل صاحب القضية"
+
+#: .\dashboard\templates\dashboard_cases.html:104
+#: .\dashboard\templates\dashboard_files.html:92
+#: .\dashboard\templates\dashboard_home.html:118
+#: .\dashboard\templates\dashboard_sales.html:93
+#: .\dashboard\templates\dashboard_sessions.html:92
+msgid "Case Name"
+msgstr "اسم القضية"
+
+#: .\dashboard\templates\dashboard_cases.html:106
+#: .\dashboard\templates\dashboard_home.html:119
+msgid "Case Category"
+msgstr "مصنف القضية"
+
+#: .\dashboard\templates\dashboard_cases_charts.html:6
+#: .\dashboard\templates\dashboard_cases_charts.html:17
+msgid "Cases Charts"
+msgstr "الرسوم البيانية للقضايا"
+
+#: .\dashboard\templates\dashboard_clients.html:34
+msgid "Clients Search"
+msgstr "بحث عن موكل"
+
+#: .\dashboard\templates\dashboard_clients.html:44
+msgid "Enter Client Name"
+msgstr "ادخل اسم الموكل"
+
+#: .\dashboard\templates\dashboard_clients.html:66
+msgid "Alert : Deleting Clients"
+msgstr "تحذير : مسح الموكلين"
+
+#: .\dashboard\templates\dashboard_clients.html:70
+msgid ""
+"Be CareFul Deleting Clients Will Deleting His Cases ,Files ,Sessions That "
+"connected With This Client"
+msgstr "تنبيه عند مسح الموكل سيتم حذف كل متعلقاته من ملفات وجلسات وقضايا ومهام"
+
+#: .\dashboard\templates\dashboard_files.html:6
+#: .\dashboard\templates\dashboard_files_view.html:6
+msgid "Cases Files"
+msgstr "ملفات القضية"
+
+#: .\dashboard\templates\dashboard_files.html:17
+#: .\dashboard\templates\dashboard_files_view.html:17
+msgid "Files Control"
+msgstr "التحكم فى الملفات"
+
+#: .\dashboard\templates\dashboard_files.html:107
+msgid "View Files"
+msgstr "عرض الملفات"
+
+#: .\dashboard\templates\dashboard_files_view.html:45
+#: .\dashboard\templates\dashboard_home.html:116
+#: .\dashboard\templates\dashboard_sales_view.html:39
+#: .\dashboard\templates\dashboard_sessions_view.html:42
+msgid "Case ID"
+msgstr "سريال القضية"
+
+#: .\dashboard\templates\dashboard_files_view.html:57
+msgid "Created At"
+msgstr "انشاء فى"
+
+#: .\dashboard\templates\dashboard_files_view.html:73
+msgid "Delete File"
+msgstr "مسح الملف"
+
+#: .\dashboard\templates\dashboard_home.html:42
+#: .\dashboard\templates\dashboard_home.html:57
+#: .\dashboard\templates\dashboard_home.html:72
+#: .\dashboard\templates\dashboard_home.html:87
+msgid "More info"
+msgstr "للمزيد من المعلومات"
+
+#: .\dashboard\templates\dashboard_home.html:82
+msgid "Total Cash Earned"
+msgstr "اجمالى المبالغ المستلمة"
+
+#: .\dashboard\templates\dashboard_home.html:99
+msgid "Lastest Sessions Created Or Updated"
+msgstr "اخر جلسات تم انشاءها او تعديلها"
+
+#: .\dashboard\templates\dashboard_home.html:120
+#: .\dashboard\templates\dashboard_sessions_view.html:54
+msgid "Session Date"
+msgstr "موعد الجلسة"
+
+#: .\dashboard\templates\dashboard_sales.html:109
+msgid "View Cash"
+msgstr "عرض المدفوعات"
+
+#: .\dashboard\templates\dashboard_sales_charts.html:6
+#: .\dashboard\templates\dashboard_sales_charts.html:17
+msgid "Sales Charts"
+msgstr "الرسوم البيانية للاموال"
+
+#: .\dashboard\templates\dashboard_sales_charts.html:181
+msgid "Cases Cash"
+msgstr "اجمالى اموال القضايا"
+
+#: .\dashboard\templates\dashboard_sales_charts.html:192
+msgid "Cash Reserved"
+msgstr "اجمالى الاموال المستلمة"
+
+#: .\dashboard\templates\dashboard_sales_view.html:43
+msgid "View Payment Page"
+msgstr "عرض صفحة المدفوعات"
+
+#: .\dashboard\templates\dashboard_sales_view.html:53
+msgid "Money"
+msgstr "المبلغ"
+
+#: .\dashboard\templates\dashboard_sales_view.html:54
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#: .\dashboard\templates\dashboard_sales_view.html:55
+msgid "Total Payments"
+msgstr "اجمالى المدفوعات"
+
+#: .\dashboard\templates\dashboard_sales_view.html:66
+msgid "Delete Payment"
+msgstr "مسح الدفع"
+
+#: .\dashboard\templates\dashboard_sessions.html:6
+#: .\dashboard\templates\dashboard_sessions_view.html:6
+msgid "Cases Sessions"
+msgstr "جلسات القضايا"
+
+#: .\dashboard\templates\dashboard_sessions.html:16
+#: .\dashboard\templates\dashboard_sessions_view.html:17
+msgid "Sessions Control"
+msgstr "التحكم فى الجلسات"
+
+#: .\dashboard\templates\dashboard_sessions.html:107
+msgid "View Sessions"
+msgstr "عرض الجلسات"
+
+#: .\dashboard\templates\dashboard_sessions_view.html:55
+msgid "Status"
+msgstr "الحالة"
+
+#: .\dashboard\templates\dashboard_sessions_view.html:81
+msgid "Delete Session"
+msgstr "مسح الجلسة"
+
+#, fuzzy
+#~| msgid "Case Create"
+#~ msgid "Case Charts"
+#~ msgstr "انشاء قضية"

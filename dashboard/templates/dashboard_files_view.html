@@ -1,0 +1,88 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Cases Files' %}
+
+{% endblock title %}
+
+{% block cases %}
+active
+{% endblock cases %}
+{% block cases_files %}
+active
+{% endblock cases_files %}
+{% block page_name %}
+{% translate 'Files Control' %}
+
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Cases' %}
+
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Files' %}
+
+{% endblock page_name_2 %}
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="padding-bottom: 10px;">
+                            <h2 class="card-title" style="float: right;">{% translate 'Client Name' %} :<a
+                                    href="{% url 'cases:client_details' id=cases.client.id %}">
+                                    {{cases.client.name}}</a>
+                            </h2>
+                        </div>
+                        <br>
+                        <h3 class="card-title" style="float: right;">{% translate 'Case ID' %} : <a href="{% url 'cases:case_details' id=cases.id %}">
+                                {{cases.case_id}}</a></h3>
+
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>{% translate 'Files' %}</th>
+                                    <th>{% translate 'Created At' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for file in files %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td><a href="{% url 'cases:case_file_edit' id=file.id %}">
+                                             {{file.file}}</a></td>
+                                    <td>
+                                        {{file.created_at|date:'Y / m / d'}} At 
+                                        {{file.created_at|time:"g:i A"}}
+                                    </td>
+
+                                    <td><a href="{% url 'dashboard:dashboard_file_delete' id=file.id %}"><button
+                                                type="button" class="btn btn-block btn-danger ">{% translate 'Delete File' %}</button>
+                                        </a></td>
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

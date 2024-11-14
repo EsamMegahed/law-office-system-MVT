@@ -1,0 +1,123 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Cases Sessions' %}
+{% endblock title %}
+
+{% block cases %}
+active
+{% endblock cases %}
+{% block cases_sessions %}
+active
+{% endblock cases_sessions %}
+{% block page_name %}
+{% translate 'Sessions Control' %}
+
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Cases' %}
+
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Sessions' %}
+
+{% endblock page_name_2 %}
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{% translate 'Cases Search By Case Number' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method='post' style="text-align: right;direction: rtl;">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">{% translate 'Cases' %}</label>
+                                <input type="text" class="form-control" placeholder="{% translate 'Enter Case Number' %}"
+                                    name="case_number_search_field" list="client_search">
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">{% translate 'Search' %}</button>
+                        </div>
+                        <datalist id="client_search">
+                            {% for case in cases_data %}
+                            <option value="{{case.case_id}}"></option>
+                            {% endfor %}
+                        </datalist>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{% translate 'Cases' %}</h3>
+
+                        {% if cases.has_other_pages %}
+                        <div class="card-tools">
+                            <ul class="pagination pagination-sm float-right">
+                                {% if cases.has_previous %}
+                                <li class="page-item"><a class="page-link" href="?page={{cases.previous_page_number}}">&laquo;</a></li>
+                                {% endif %}
+                                {% for i in cases.paginator.page_range %}
+                                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                {% endfor %}
+                                {% if cases.has_next %}
+                                <li class="page-item"><a class="page-link" href="?page={{cases.next_page_number}}">&raquo;</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>{% translate 'Case Client' %}</th>
+                                    <th>{% translate 'Case Name' %}</th>
+                                    <th>{% translate 'Case Number' %}</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for case in cases %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td><a href="{% url 'cases:client_details' id=case.client.id %}">{{case.client}}</a></td>
+                                    <td>{{case.case_name}}</td>
+                                    <td><a href="{% url 'cases:case_details' id=case.id %}">{{case.case_id}}</a>
+                                    </td>
+                                    <td><a href="{% url 'dashboard:dashboard_sessions_view' id=case.id %}"><button type="button"
+                                                class="btn btn-block btn-secondary ">{% translate 'View Sessions' %}</button>
+                                        </a></td>
+                                    
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

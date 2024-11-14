@@ -1,0 +1,31 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Clients Edit' %}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Clients Edit' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div style="margin: 10px 10px;text-align: right;direction: rtl;">
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form client_form %}
+
+            <div style="text-align: center;">
+                <button class="sent-btn" style="width: 50%;" type="submit">{% translate 'Save Changes' %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

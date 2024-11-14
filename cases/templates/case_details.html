@@ -1,0 +1,219 @@
+{% extends 'site_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Case Details' %} : {{case.case_name}}
+{% endblock title %}
+{% block content %}
+
+<div class="page-banner-area bg-img-3 pt-95 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content col-12 text-center">
+                <h2>{% translate 'Case Details' %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+
+    <div class="container">
+        <!-- Servcice Layout Area Start-->
+        <div class="service-layout-area pt-100 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="service-sidebar-wrapper">
+                            <div class="service-sidebar mb-50">
+
+                                <div style="text-align: center;padding-top:10px">
+                                    <a href="{% url 'cases:case_event_create' id=case.id %}">
+                                        <button class="sent-btn" style="width: 100%;" type="submit">
+                                            {% translate 'Add Event' %}</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% if request.user.is_superuser %}
+                        <div class="service-sidebar-wrapper">
+                            <div class="service-sidebar mb-50">
+
+                                <div style="text-align: center;padding-top:10px">
+                                    <a href="{% url 'cases:case_payment_create' id=case.id %}">
+                                        <button class="sent-btn" style="width: 100%;" type="submit">
+                                            {% translate 'Case Payment' %}
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        
+                        <div class="service-sidebar-wrapper">
+                            <div class="service-sidebar mb-50">
+
+                                <div style="text-align: center;padding-top:10px">
+                                    <a href="{% url 'cases:case_sessions_create' id=case.id %}">
+                                        <button class="sent-btn" style="width: 100%;" type="submit">{% translate 'Add Session' %}</button>
+                                    </a>
+                                </div>
+                                <div style="padding-top: 15px;text-align: center;color:#b99044">
+                                    <h3>{% translate 'Sessions' %}</h3>
+                                </div>
+                                <div style="color: aliceblue;text-align: center;">
+                                    {% for session in case.cases_sessions.all|dictsort:'date' %}
+                                    <div style="padding-bottom: 10px;">
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <h5><a href="{% url 'cases:case_sessions_edit' id=session.id %}"
+                                                        style="color: #b99044;">{{session.date|date:"Y / m / d"}}</a>
+                                                </h5>
+                                            </div>
+                                            <div class="col-2">
+                                                {% if session.session_description %}
+                                                <div
+                                                    style="height: 10px;width:10px;background-color: rgb(64, 255, 64);border-radius: 5px;margin-top: 10px;">
+                                                </div>
+                                                {% else %}
+                                                <div
+                                                    style="height: 10px;width:10px;background-color: rgb(250, 69, 56);border-radius: 5px;margin-top: 10px;">
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="service-sidebar-wrapper">
+                            <div class="service-sidebar mb-50">
+                                <div style="text-align: center;padding-top:10px">
+                                    <a href="{% url 'cases:case_file_create' id=case.id %}">
+                                        <button class="sent-btn" style="width: 100%;" type="submit">{% translate 'Add Files' %}</button>
+                                    </a>
+                                </div>
+                                <div style="padding-top: 15px;text-align: center;color:#b99044">
+                                    <h3>{% translate 'Files' %}</h3>
+                                </div>
+                                <div style="color: aliceblue;text-align: center;">
+
+                                    {% for file in case.cases_files.all %}
+
+                                    <div style="padding-bottom: 20px;">
+                                        <a href="{% url 'cases:case_file_edit' id=file.id %}"
+                                            style="color: #b99044;display: block;max-width: 100%;word-wrap: break-word;">
+                                            <p><span>{{file}}</span></p>
+
+                                        </a>
+                                        ------------------------
+                                    </div>
+
+
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div style="width: 100%;text-align: left; ">
+                                        <div style="text-align: right;">
+                                            <h2 style="color: #b99044;">
+                                                {% translate 'Case Information' %}
+                                            </h2>
+                                        </div>
+                                        <div style="padding-top: 20px;text-align: right;">
+                                            <h4 style="padding-top: 10px;"> <span style="color: #b99044;">{% translate 'Client Name' %}
+                                                    :</span> {{case.client.name}}
+                                            </h4>
+                                            <h4 style="padding-top: 10px;"> <span style="color: #b99044;">{% translate 'Category' %}
+                                                    :</span> {{case.category}}
+                                            </h4>
+                                            <h4 style="padding-top: 10px;"> <span style="color: #b99044;">{% translate 'case id' %}
+                                                    :</span> {{case.case_id}}
+                                            </h4>
+                                            <h4 style="padding-top: 10px;"> <span style="color: #b99044;">{% translate 'case name' %}
+                                                    :</span> {{case.case_name}}
+                                            </h4>
+                                            <h4 style="padding-top: 10px;"> <span style="color: #b99044;">{% translate 'case number' %}
+                                                    :</span> <span>{{case.case_number}}</span>
+                                            </h4>
+
+                                        </div>
+                                        <div class="case_text" style="padding-top: 50px;">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h3 style="color: #b99044;">{% translate 'Case Text Field' %}</h3>
+                                                </div>
+                                                <div class="col-6"><a
+                                                        href="{% url 'cases:case_text_feilds' id=case.id %}">
+                                                        <button class="sent-btn" style="width: 100%;"
+                                                            type="submit">{% translate 'Edit' %}</button>
+                                                    </a></div>
+                                            </div>
+                                            <div style="padding-top: 30px;text-align: center;">
+                                                <h4><span style="color: #b99044;">{% translate 'case description' %}</span>
+                                                </h4>
+                                                <div
+                                                    style="padding: 15px; width: 100%; border: 3px;border-color: #b99044;border-style: solid;border-radius: 10px; text-align: right; direction: rtl;">
+                                                    {% if case.case_description %}
+                                                    <p>{{case.case_description|linebreaks}}
+                                                    </p>
+                                                    {% else %}
+                                                    <p>لم يتم ادخال تفاصيل القضية بعد</p>
+                                                    {% endif %}
+                                                    
+                                                </div>
+                                            </div>
+                                            <div style="padding-top: 30px;text-align: center;">
+                                                <h4><span style="color: #b99044;">{% translate 'case plan' %}</span>
+                                                </h4>
+                                                <div
+                                                    style="padding: 15px; width: 100%; border: 3px;border-color: #b99044;border-style: solid;border-radius: 10px;text-align: right; direction: rtl;">
+                                                    {% if case.case_plan %}
+                                                    <p style="text-justify: auto;">{{case.case_plan|linebreaks}}</p>
+                                                    {% else %}
+                                                    <p>لم يتم ادخال خطة القضية بعد</p>
+                                                    {% endif %}
+                                                    
+                                                </div>
+                                            </div>
+                                            <div style="padding-top: 30px;text-align: center;">
+                                                <h4><span style="color: #b99044;">{% translate 'Case loopholes' %} </span>
+                                                </h4>
+                                                <div
+                                                    style="padding: 15px; width: 100%; border: 3px;border-color: #b99044;border-style: solid;border-radius: 10px;text-align: right; direction: rtl;">
+                                                    {% if case.Case_loopholes %}
+                                                    <p style="text-justify: auto;">{{case.Case_loopholes|linebreaks}}
+                                                    {% else %}
+                                                    <p>لم يتم ادخال ثغرات القضية بعد</p>
+                                                    {% endif %}
+                                                    
+                                                    
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Servcice Layout Area End-->
+    </div>
+
+    {% endblock content %}

@@ -1,0 +1,45 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{% translate 'Users' %}
+
+{% endblock title %}
+
+{% block users %}
+active
+{% endblock users %}
+{% block user_create %}
+active
+{% endblock user_create %}
+{% block page_name %}
+
+{% translate 'Create User' %}
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Users' %}
+
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Create User' %}
+
+{% endblock page_name_2 %}
+
+{% block content %}
+<div class="card card-primary" style="text-align: right;direction: rtl;">
+    <div class="card-header">
+        <h3 class="card-title">{% translate 'Create User' %}</h3>
+    </div>
+    <form method='post'>
+        {% csrf_token %}
+        <div class="card-body">
+            {% bootstrap_form user_form %}
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">{% translate 'Create' %}</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

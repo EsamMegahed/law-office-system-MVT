@@ -1,0 +1,98 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+{{user.username}} {% translate 'Details' %}
+{% endblock title %}
+{% block users %}
+active
+{% endblock users %}
+{% block user_List %}
+active
+{% endblock user_List %}
+{% block page_name %}
+{{user.username}} {% translate 'Details' %}
+{% endblock page_name %}
+{% block page_name_1 %}
+{% translate 'Users' %}
+
+{% endblock page_name_1 %}
+{% block page_name_2 %}
+{% translate 'Users List' %} / {{user.username}} {% translate 'Details' %}
+{% endblock page_name_2 %}
+
+{% block content %}
+
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">{{user.username|capfirst}} {% translate 'Profile' %}</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form style="text-align: right;direction: rtl;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">{% translate 'User Name' %}</label>
+                <input type="charset" class="form-control" readonly placeholder="{{user.username}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{% translate 'Email' %}</label>
+                <input type="charset" class="form-control" readonly placeholder="{{user.email}}">
+            </div>
+
+        </div>
+        <!-- /.card-body -->
+        {% if user.is_superuser %}
+        <div class="row" style="text-align: center;">
+
+            <div class="card-footer col-12">
+                <button type="submit" class="btn btn-secondary ">{% translate 'Change Password' %}</button>
+
+            </div>
+        </div>
+        {% else %}
+
+        <div class="row" style="text-align: center;">
+            <div class="card-footer col-4">
+                <a href="{% url 'dashboard:dashboard_user_edit' id=user.id %}">
+                    <button type="button" class="btn btn-primary ">{% translate 'Edit Profile' %}</button>
+                </a>
+            </div>
+            <div class="card-footer col-4">
+                <a href="{% url 'dashboard:dashboard_user_password_change' id=user.id %}">
+                    <button type="button" class="btn btn-secondary ">{% translate 'Change Password' %}</button>
+                </a>
+            </div>
+            <div class="card-footer col-4">
+                <a href="{% url 'dashboard:dashboard_user_delete' id=user.id %}">
+                    <button type="button" class="btn btn-danger ">{% translate 'Delete' %}</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+
+            {% comment %} {% if request.user.has_perm('auth.Lawyer_Active') %} {% endcomment %}
+            {% if perm == True %}
+            <div class="card-footer col-12">
+                <a href="{% url 'dashboard:dashboard_user_remove_permission' id=user.id %}">
+                    <button type="button" class="btn btn-danger " style="width: 50%;">
+                        {% translate 'Remove Lawyer Permission' %}</button>
+                </a>
+            </div>
+            {% else %}
+            <div class="card-footer col-12">
+                <a href="{% url 'dashboard:dashboard_user_add_permission' id=user.id %}">
+                    <button type="button" class="btn btn-warning " style="width: 50%;">
+                        {% translate 'Make Him A Lawyer' %}</button>
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+        {% endif %}
+    </form>
+</div>
+{% endblock content %}

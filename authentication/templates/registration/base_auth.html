@@ -1,0 +1,224 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'site/img/favicon.ico' %}">
+    <!--All Css Here-->
+
+    <!-- Droid Font CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/droid.css' %}">
+    <!-- Icofont CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/icofont.css' %}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/font-awesome.min.css' %}">
+
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/animate.css' %}">
+    <!-- Owl Carousel CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/owl.carousel.min.css' %}">
+    <!-- Datepicker CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/jquery.datepicker.css' %}">
+    <!-- Calendar CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/zabuto_calendar.css' %}">
+    <!-- Meanmenu CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/meanmenu.min.css' %}">
+    <!-- Venobox CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/venobox.css' %}">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'site/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'site/css/responsive.css' %}">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="{% static 'site/css/bootstrap.min.css' %}">
+    <!-- Modernizr Js -->
+    <script src="{% static 'site/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+    <div class="wrapper">
+        <!--Header Area Start-->
+        <header>
+            <div class="header-container">
+                <!--Header Top Area Start-->
+                <div class="header-top-area default-bg">
+                    <div class="container">
+                        <div class="row row-75">
+                            <div class="header-top-wrap col-12">
+                                <div class="row">
+                                    <!--Header Top Left Area Start-->
+                                    <div class="col-md-4 col-xl-3">
+                                        <div class="header-top-left">
+                                            <p>CALL US : <a href="#"> +20 1095 664 386</a></p>
+                                        </div>
+                                    </div>
+                                    <!--Header Top Left Area End-->
+                                    <!--Header Top Middle Area Start-->
+                                    <div class="col-md-4 col-xl-6">
+                                        <div class="header-top-left text-center">
+                                            <p>مكتب اليسر للمحاماه</p>
+                                        </div>
+                                    </div>
+                                    <!--Header Top Middle Area End-->
+                                    <!--Header Top Right Area Start-->
+                                    <div class="col-md-4 col-xl-3">
+                                        <div class="header-top-right">
+                                            <p>MAIL US :<a href="#">info@example.com</a></p>
+                                        </div>
+                                    </div>
+                                    <!--Header Top Right Area End-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Header Top Area End-->
+                <!--Header Bottom Area Start-->
+                <div class="header-bottom-area header-sticky">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <!--Header Logo Start-->
+                            <div class="col-md-3">
+                                <div class="header-logo">
+                                    <a href="index.html"><img src="{% static 'site/img/logo/logo.png' %} " alt=""></a>
+                                </div>
+                            </div>
+                            <!--Header Logo End-->
+                            <!--Header Menu Start-->
+                            <div class="col-md-9">
+                                <div class="header-menu-area text-right">
+                                    <nav>
+                                        <ul class="main-menu">
+                                            <li class="active"><a href="index.html">HOME</a>
+                                            </li>
+                                            <li><a href="{% url "cases:clients_view" %}">Clients</a></li>
+                                            <li><a href="{% url "cases:case_sessions_list" %}">Sessions</a></li>
+                                            <li><a href="{% url "dashboard:home_page" %}">DashBoard</a></li>
+                                            <li><a href=""
+                                                    style="border: 5px;border-color: black;">LOGIN</a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!--Header Menu End-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!--Mobile Menu Area Start-->
+                                <div class="mobile-menu d-lg-none d-xl-none"></div>
+                                <!--Mobile Menu Area End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Header Bottom Area End-->
+            </div>
+        </header>
+        <!--Header Area End-->
+
+        <!-- Content Start -->
+        <div>
+            {% block contenta %}
+            
+            {% endblock contenta %}
+
+        </div>
+        <!-- Content END -->
+
+        <!--Footer Area Start-->
+        <footer>
+            <div class="footer-container">
+                <!--Footer Top Area Start-->
+                <div class="footer-top-area black-bg pt-100 pb-65">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <!--Single Footer Widget Start-->
+                                <div class="single-footer-widget mb-30">
+                                    <a class="footer-logo" href="index.html"><img
+                                            src="{% static 'site/img/logo/logo-footer.png' %} " alt=""></a>
+                                    <p>مكتب للمحماه والاستشارات القانونية والجنائية و قضايا الاسرة</p>
+
+
+                                </div>
+                                <!--Single Footer Widget End-->
+                            </div>
+
+                            <!--Single Footer Widget Start-->
+                            <div class="col-md-6 col-lg-6">
+                                <div class="single-footer-widget mb-30">
+                                    <h3 class="footer-title">Contact Info</h3>
+                                    <p>ايتاى البارود <br> امام المحكمة بجوار المسجد القديم</p>
+                                    <p class="contact-info">
+                                        <a href="#">+12546 658 987</a>
+                                        <a href="#">+12548 789 987</a>
+                                    </p>
+                                    <p class="contact-info">
+                                        <a>info@yoursite.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                    </div>
+                </div>
+                <!--Footer Top Area End-->
+
+            </div>
+        </footer>
+        <!--Footer Area End-->
+    </div>
+
+
+
+
+
+    <!--All Js Here-->
+
+    <!--Jquery 1.12.4-->
+    <script src="{% static 'site/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!--Waypoints-->
+    <script src="{% static 'site/js/waypoints.min.js' %}"></script>
+    <!--Counterup-->
+    <script src="{% static 'site/js/jquery.counterup.min.js' %}"></script>
+    <!--Carousel-->
+    <script src="{% static 'site/js/owl.carousel.min.js' %}"></script>
+    <!--Meanmenu-->
+    <script src="{% static 'site/js/jquery.meanmenu.min.js' %}"></script>
+    <!--Instafeed-->
+    <script src="{% static 'site/js/instafeed.min.js' %}"></script>
+    <!--Datepicker-->
+    <script src="{% static 'site/js/jquery.datepicker.min.js' %}"></script>
+    <!--Calendar-->
+    <script src="{% static 'site/js/zabuto-calendar.min.js' %}"></script>
+    <!--ScrollUp-->
+    <script src="{% static 'site/js/jquery.scrollUp.min.js' %}"></script>
+    <!--Wow-->
+    <script src="{% static 'site/js/wow.min.js' %}"></script>
+    <!--Venobox-->
+    <script src="{% static 'site/js/venobox.min.js' %}"></script>
+    <!--Popper-->
+    <script src="{% static 'site/js/popper.min.js' %}"></script>
+    <!--Bootstrap-->
+    <script src="{% static 'site/js/bootstrap.min.js' %}"></script>
+    <!--Plugins-->
+    <script src="{% static 'site/js/plugins.js' %}"></script>
+    <!--Main Js-->
+    <script src="{% static 'site/js/main.js' %}"></script>
+</body>
+
+
+</html>

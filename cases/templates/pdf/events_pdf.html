@@ -1,0 +1,107 @@
+{% load static %}
+
+
+
+<html dir="rtl">
+
+<pdf:language name="ar" />
+
+<head>
+    <title>المهمات</title>
+    <meta charset="UTF-8">
+
+
+    <style type="text/css">
+        @page {
+            size: letter portrait;
+
+            @frame content_frame {
+                left: 50pt;
+                width: 512pt;
+                top: 50pt;
+                height: 692pt;
+                -pdf-frame-border: 1;
+                /* for debugging the layout */
+            }
+        }
+
+        @font-face {
+            font-family: 'ta';
+            src: url('{% static "fonts/tahoma.ttf" %}');
+        }
+
+        body {
+            font-weight: 150;
+            font-size: 14px;
+            font-family: 'ta', sans-serif;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+
+
+        }
+
+        .dot {
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+
+    <pdf:language name="arabic" />
+
+
+</head>
+
+<body>
+    <div style="text-align: center;padding-top: 20px;">
+
+        <h1>مكتب اليسر</h1>
+        <h2>مهمات يوم <br>{{events.first.start_date|date:'Y / m / d'}}</h2>
+
+
+    </div>
+    <div>
+        <pdf:language name="arabic" />
+        <h1 class="vertical-text" lang="ar"></h1>
+    </div>
+
+
+
+
+
+    {% for event in events %}
+    <div style="margin-top: 25px;text-align: right;">
+        <table width="100%" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td colspan="1">{{event.start_date|time}}</td>
+                <td colspan="9" style="font-size: 10px;">
+                    <h3>{{event.cases.client.name}}</h3>
+                    <hr>
+                    <h3>{{event.cases.case_name}}</h3>
+                    <hr>
+                    <h3>{{event.location}}</h3>
+                    <hr>
+                    <p>{{event.task}}</p>
+                </td>
+                <td colspan="1" style="font-size: 10px;text-align: center;">
+                    <h3>الموكل</h3>
+                    <hr>
+                    <h3>القضية</h3>
+                    <hr>
+                    <h3>الموقع</h3>
+                    <hr>
+                    <p>المهمة</p>
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
