@@ -1,4 +1,4 @@
-Hello This A Laywer system With Django MVT to manage the cases and analys case data
+Hello This A Laywer system offline With Django MVT to manage the cases and analys case data
 
 this system give You a  control to create 
 
