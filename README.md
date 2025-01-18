@@ -1,4 +1,4 @@
-Hello This A Laywer system to mange the cases and analys
+Hello This A Laywer system With Django MVT to manage the cases and analys case data
 
 this system give You a  control to create 
 
@@ -27,4 +27,12 @@ this system give You a  control to create
 7 - 2 Languages (Arabic - English)
 
 8 - authentication and registration system
+
+Installation
+- create an py venv
+- pip install -r requirments.txt
+- py manage.py makemigrations
+- py manage.py migrate
+- py manage.py runserver
+
 
